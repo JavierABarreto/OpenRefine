@@ -334,18 +334,37 @@
           <autoReleaseAfterClose>true</autoReleaseAfterClose>
         </configuration>
       </plugin>
-        <plugin>
-            <groupId>org.jvnet.localizer</groupId>
-            <artifactId>localizer-maven-plugin</artifactId>
-            <version>${org-jvnet-localizer-plugin.version}</version>
-            <executions>
-                <execution>
-                    <goals>
-                        <goal>generate</goal>
-                    </goals>
-                </execution>
-            </executions>
-        </plugin>
+      <plugin>
+          <groupId>org.jvnet.localizer</groupId>
+          <artifactId>localizer-maven-plugin</artifactId>
+          <version>${org-jvnet-localizer-plugin.version}</version>
+          <executions>
+              <execution>
+                  <goals>
+                      <goal>generate</goal>
+                  </goals>
+              </execution>
+          </executions>
+      </plugin>
+      <plugin>
+        <!--
+          War plugin used to automatically replace property placeholders,
+          such as ${project.version} within /WEB-INF when running 'mvn package'
+        -->
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.4.0</version>
+        <configuration>
+          <webResources>
+            <resource>
+              <directory>main/webapp</directory>
+              <includes>
+                <include>**/web.xml</include>
+              </includes>
+            </resource>
+          </webResources>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 

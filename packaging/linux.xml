@@ -63,7 +63,6 @@
       </excludes>
     </fileSet>
   </fileSets>
-  <!-- TODO replace $VERSION by ${project.version} in WEB-INF/web.xml -->
   <files>
     <file>
       <source>${rootdir}/refine</source>
