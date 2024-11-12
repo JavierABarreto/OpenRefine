@@ -348,8 +348,8 @@
       </plugin>
       <plugin>
         <!--
-          War plugin used to automatically replace property placeholders,
-          such as ${project.version} within /WEB-INF when running 'mvn package'
+            War plugin used to automatically replace property placeholders,
+            such as ${project.version} within /WEB-INF when running 'mvn package'
         -->
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
